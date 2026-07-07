@@ -59,7 +59,7 @@ def get_forecast(original_price,differencing_order):
     preidictions = fit_model(original_price,differencing_order)
     start_date = datetime.now().strftime('%Y-%m-%d')
     end_date =  (datetime.now()+timedelta(days=29)).strftime('%Y-%m-%d')    
-    forecast_index = pd.date_range(start=start_date,end=end_date,freq='D')
+    forecast_index = pd.date_range(start=start_date,end=end_date,freq='B')
     forecast_df = pd.DataFrame(preidictions,index=forecast_index ,columns= ['Close'])
     return forecast_df
 
